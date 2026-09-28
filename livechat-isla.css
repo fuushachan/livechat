@@ -1,0 +1,451 @@
+@import url("https://fonts.googleapis.com/css?family=Titillium Web");
+
+
+yt-live-chat-banner-manager {
+  display: none !important;
+}
+
+yt-live-chat-action-panel-renderer,
+yt-live-chat-renderer #action-panel {
+  display: none !important;
+}
+
+/* Transparent background. */
+yt-live-chat-renderer {
+  background-color: transparent !important;
+}
+
+yt-live-chat-text-message-renderer,
+yt-live-chat-text-message-renderer[is-highlighted] {
+  background-color: transparent !important;
+}
+
+yt-live-chat-text-message-renderer[author-type="owner"],
+yt-live-chat-text-message-renderer[author-type="owner"][is-highlighted] {
+  background-color: transparent !important;
+}
+
+yt-live-chat-text-message-renderer[author-type="moderator"],
+yt-live-chat-text-message-renderer[author-type="moderator"][is-highlighted] {
+  background-color: transparent !important;
+}
+
+yt-live-chat-text-message-renderer[author-type="member"],
+yt-live-chat-text-message-renderer[author-type="member"][is-highlighted] {
+  background-color: transparent !important;
+}
+
+yt-live-chat-author-chip #author-name {
+  background-color: transparent !important;
+}
+
+/* Outlines */
+yt-live-chat-renderer * {
+  font-family: var(--FontFams);
+  font-size: 30px !important;
+  line-height: normalpx !important;
+}
+
+yt-live-chat-text-message-renderer #content,
+yt-live-chat-legacy-paid-message-renderer #content {
+  overflow: initial !important;
+}
+
+/* Hide scrollbar. */
+yt-live-chat-item-list-renderer #items {
+  overflow: hidden !important;
+}
+
+yt-live-chat-item-list-renderer #item-scroller {
+  overflow: hidden !important;
+}
+
+/* Hide header and input. */
+yt-live-chat-header-renderer,
+yt-live-chat-message-input-renderer {
+  display: none !important;
+}
+
+/* Spacing between different chatboxes (jarak antar chat akun lain) */
+yt-live-chat-text-message-renderer,
+yt-live-chat-legacy-paid-message-renderer,
+yt-live-chat-paid-message-renderer,
+yt-live-chat-membership-item-renderer {
+  margin-top: 4px !important;
+  margin-bottom: 24px !important;
+  padding-left: 4px !important;
+  padding-right: 4px !important;
+}
+
+yt-live-chat-paid-message-renderer #header {
+  padding-left: 4px !important;
+  padding-right: 4px !important;
+}
+
+/* Hide badges. */
+yt-live-chat-text-message-renderer #author-badges {
+  display: none !important;
+  vertical-align: text-top !important;
+}
+
+/* Timestamps. */
+yt-live-chat-text-message-renderer #timestamp {
+  color: #093761 !important;
+  font-family: var(--FontFams);
+  font-size: 16px !important;
+  line-height: 16px !important;
+}
+
+yt-live-chat-text-message-renderer yt-live-chat-author-badge-renderer {
+  margin-left: 5px !important;
+  padding: 3px;
+  transform: scale(1.2);
+}
+
+yt-live-chat-text-message-renderer yt-live-chat-author-badge-renderer[type="member"] {
+  transform: scale(1.5);
+}
+
+yt-live-chat-text-message-renderer #content {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  width: fit-content !important;
+  max-width: 85% !important;
+  padding: 5px 20px !important;
+  animation: msgAnim 1s ease-in-out;
+}
+
+@keyframes msgAnim {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  50% {
+    opacity: 100%;
+    transform: translateX(10px);
+  }
+
+  60% {
+    opacity: 100%;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes msgAnim1 {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  50% {
+    opacity: 100%;
+    transform: translateX(-10px);
+  }
+
+  60% {
+    opacity: 100%;
+    transform: translateX(0px);
+  }
+}
+
+yt-live-chat-text-message-renderer[author-type="owner"] #content {
+  align-items: flex-end !important;
+  margin-left: auto !important;
+  animation: msgAnim1 1s ease-in-out;
+}
+
+yt-live-chat-text-message-renderer #author-photo,
+yt-live-chat-legacy-paid-message-renderer #author-photo {
+  width: 24px !important;
+  height: 24px !important;
+  border-radius: 24px !important;
+  margin-right: 6px !important;
+}
+
+yt-live-chat-text-message-renderer #author-photo {
+  position: relative !important;
+  overflow: visible !important;
+  transform-origin: center;
+  transform: scale(2.2);
+  margin: 13px;
+  animation: photoAnim 1s ease-in-out;
+}
+
+yt-live-chat-text-message-renderer #author-photo img,
+yt-live-chat-text-message-renderer #author-photo #img {
+  border-radius: 50% !important;
+  display: block !important;
+}
+
+yt-live-chat-text-message-renderer #author-photo::after {
+  content: "" !important;
+  position: absolute !important;
+  top: -20% !important;
+  left: -20% !important;
+  width: 140% !important;
+  height: 140% !important;
+  background: url("https://drive.google.com/uc?export=view&id=GANTI_DENGAN_FILE_ID_KAMU") no-repeat center center / contain !important;
+  pointer-events: none !important;
+  z-index: 5 !important;
+}
+
+@keyframes photoAnim {
+  0% {
+    opacity: 0%;
+    margin-top: 50px;
+    margin-bottom: -40px;
+  }
+
+  15% {
+    opacity: 100%;
+    margin-top: 13px;
+    margin-bottom: 13px;
+  }
+}
+
+yt-live-chat-text-message-renderer[author-type="owner"] #author-photo {
+  margin-right: 25px !important;
+}
+
+yt-live-chat-text-message-renderer yt-live-chat-author-chip {
+  display: inline-flex !important;
+  width: fit-content !important;
+  padding-right: 80px !important;
+  z-index: 10 !important;
+  animation: nameAnim 1s ease-in-out;
+}
+
+@keyframes nameAnim {
+
+  0%,
+  30% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  70% {
+    opacity: 100%;
+    transform: translateX(10px);
+  }
+
+  80% {
+    opacity: 100%;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes nameAnim1 {
+
+  0%,
+  30% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  70% {
+    opacity: 100%;
+    transform: translateX(-10px);
+  }
+
+  80% {
+    opacity: 100%;
+    transform: translateX(0px);
+  }
+}
+
+yt-live-chat-text-message-renderer[author-type="owner"] yt-live-chat-author-chip {
+  margin-left: auto !important;
+  padding-right: unset !important;
+  padding-left: 80px !important;
+  animation: nameAnim1 1s ease-in-out;
+}
+
+yt-live-chat-text-message-renderer #author-name {
+  font-family: "Titillium Web" !important;
+  color: #ececec !important;
+  font-size: 30px !important;
+  font-weight: 700 !important;
+  line-height: normal !important;
+  text-align: left !important;
+  padding: 7px 20px 7px 20px !important;
+  background-color: #093761 !important;
+  border-radius: 0px 10px 10px 10px !important;
+}
+
+yt-live-chat-text-message-renderer[author-type="moderator"] #author-name {
+  background-color: #0085ff !important;
+}
+
+yt-live-chat-text-message-renderer[author-type="member"] #author-name {
+  background-color: #ca9013 !important;
+}
+
+yt-live-chat-text-message-renderer #message *,
+yt-live-chat-text-message-renderer #message {
+  color: #093761 !important;
+}
+
+#message img {
+  height: 15px !important;
+  width: auto;
+}
+
+yt-live-chat-text-message-renderer #message {
+  font-family: "Titillium Web" !important;
+  color: #093761 !important;
+  font-size: 30px !important;
+  font-weight: 700 !important;
+  line-height: normal !important;
+  text-align: left !important;
+  padding: 10px 30px 10px 30px !important;
+  margin: -35px 0px 0px 0px !important;
+  background-color: #ececec !important;
+  border-radius: 0px 15px 15px 15px !important;
+  display: block !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  word-break: break-word !important;
+  box-sizing: border-box !important;
+}
+
+yt-live-chat-text-message-renderer[author-type="moderator"] #message {
+  background-color: #ececec !important;
+}
+
+yt-live-chat-text-message-renderer[author-type="member"] #message {
+  background-color: #ececec !important;
+}
+
+/* SuperChat/Fan Funding Messages. */
+yt-live-chat-paid-message-renderer #author-name,
+yt-live-chat-paid-message-renderer #author-name *,
+yt-live-chat-legacy-paid-message-renderer #event-text,
+yt-live-chat-legacy-paid-message-renderer #event-text * {
+  color: #093761 !important;
+  font-family: var(--FontFams);
+  font-size: 30px !important;
+  line-height: 20px !important;
+}
+
+yt-live-chat-paid-message-renderer #purchase-amount,
+yt-live-chat-paid-message-renderer #purchase-amount *,
+yt-live-chat-legacy-paid-message-renderer #detail-text,
+yt-live-chat-legacy-paid-message-renderer #detail-text * {
+  color: #093761 !important;
+  font-family: var(--FontFams);
+  font-size: 30px !important;
+  line-height: 20px !important;
+}
+
+yt-live-chat-paid-message-renderer #content,
+yt-live-chat-paid-message-renderer #content * {
+  color: #093761 !important;
+  font-family: var(--FontFams);
+  font-size: 30px !important;
+  line-height: 20px !important;
+}
+
+yt-live-chat-moderation-message-renderer {
+  display: none !important;
+}
+
+yt-live-chat-paid-message-renderer {
+  margin: 4px 0 !important;
+}
+
+yt-live-chat-legacy-paid-message-renderer {
+  background-color: #ececec !important;
+  margin: 4px 0 !important;
+}
+
+yt-live-chat-text-message-renderer a,
+yt-live-chat-legacy-paid-message-renderer a {
+  text-decoration: none !important;
+}
+
+yt-live-chat-text-message-renderer[is-deleted],
+yt-live-chat-legacy-paid-message-renderer[is-deleted] {
+  display: none !important;
+}
+
+yt-live-chat-ticker-renderer {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+yt-live-chat-ticker-renderer {
+  display: none !important;
+}
+
+yt-live-chat-ticker-paid-message-item-renderer,
+yt-live-chat-ticker-paid-message-item-renderer *,
+yt-live-chat-ticker-sponsor-item-renderer,
+yt-live-chat-ticker-sponsor-item-renderer * {
+  color: #093761 !important;
+  font-family: var(--FontFams);
+}
+
+yt-live-chat-mode-change-message-renderer,
+yt-live-chat-viewer-engagement-message-renderer,
+yt-live-chat-restricted-participation-renderer {
+  display: none !important;
+}
+
+#header-content-primary-column {
+  position: unset !important;
+}
+
+yt-live-chat-banner-manager {
+  display: none !important;
+}
+
+yt-live-chat-action-panel-renderer,
+yt-live-chat-renderer #action-panel {
+  display: none !important;
+}
+
+ytd-sponsorships-live-chat-gift-purchase-announcement-renderer #menu,
+yt-live-chat-paid-message-renderer #header-content #menu,
+yt-live-chat-membership-item-renderer #menu {
+  display: none !important;
+}
+
+ytd-sponsorships-live-chat-header-renderer .rhs-image {
+  display: none !important;
+}
+
+#reaction-control-panel-overlay {
+  display: none !important;
+}
+
+#panel-pages {
+  border: none !important;
+}
+
+ytd-sponsorships-live-chat-gift-redemption-announcement-renderer {
+  display: none !important;
+}
+
+#separator {
+  display: none !important;
+}
+
+#gradient-container,
+yt-live-chat-paid-message-renderer #gradient-container {
+  display: none !important;
+}
+
+#action-buttons {
+  display: none !important;
+}
+
+#before-content-buttons {
+  display: none !important;
+}
+
+body {
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0);
+}
